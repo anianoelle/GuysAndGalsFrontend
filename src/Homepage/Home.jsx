@@ -75,7 +75,7 @@ function Home() {
         const storedEmail = localStorage.getItem('userEmail');
     
         try {
-            const response = await fetch('http://localhost:21108/api/v1/userappointments', {
+            const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/userappointments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ function Home() {
     useEffect(() => {
         const fetchServices = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/service', {
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/service', {
                     method: 'GET', // No need for POST if you are just fetching data
                     headers: {
                         'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ function Home() {
         console.log('Booking Details:', bookingDetails); // Log booking details before sending
     
         try {
-            const response = await fetch('http://localhost:21108/api/v1/booking', {
+            const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/booking', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -205,7 +205,7 @@ function Home() {
         console.log("User Email:", userEmail);
     
         try {
-            const checkoutResponse = await fetch('http://localhost:21108/api/v1/billing', {
+            const checkoutResponse = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/billing', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -238,7 +238,7 @@ function Home() {
 
         const fetchUserData = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/userdetails', {
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/userdetails', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
