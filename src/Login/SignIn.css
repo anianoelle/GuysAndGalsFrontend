@@ -1,0 +1,142 @@
+.leftdiv
+{
+    background-image: url("../assets//model.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.google
+{
+    background-image: url("../assets/google.png");
+    background-size: 95%;
+    background-repeat: no-repeat;
+}
+
+.bg1
+{
+    background-image: url("../assets/bg2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    z-index: 0;
+}
+.bg2
+{
+    background-image: url("../assets/bg1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    z-index: 0;
+}
+
+.bg3
+{
+    background-image: url("../assets/bg4.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+.img1
+{
+    background-image: url("../assets/img1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.img2
+{
+    background-image: url("../assets/img2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sv1
+{
+    background-image: url("../assets/img1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sv2
+{
+    background-image: url("../assets/sv2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sv3
+{
+    background-image: url("../assets/sv3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+button {
+    cursor: pointer;
+  }
+  
+  .dot {
+    height: 12px;
+    width: 12px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: rgb(64, 64, 240);
+    opacity: 0.2;
+  }
+  
+  .dot.active {
+    opacity: 1;
+  }
+  
+  .slides {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .slide {
+    position: absolute;
+    z-index: -1;
+    background: white;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    width: 40%;
+    height: 70%;
+    font-size: 24px;
+    transform: scale(0.7);
+    transition: all 450ms ease;
+    border-radius: 2px;
+    outline: none;
+    visibility: hidden;
+    border: solid;
+    border-width: 1px;
+    border-radius: 1%;
+  }
+  
+  .slides .left {
+    color: gray;
+    left: 0%;
+    transform: scale(0.8);
+    z-index: 2;
+    visibility: visible;
+  }
+  
+  .slides .center {
+    color: rgb(181, 76, 181);
+    z-index: 10;
+    left: 50%;
+    transform: scale(1) translateX(-50%);
+    visibility: visible;
+  }
+  
+  .slides .right {
+    color: gray;
+    left: 100%;
+    transform: scale(0.8) translateX(-125%);
+    z-index: 1;
+    visibility: visible;
+  }
+  
+

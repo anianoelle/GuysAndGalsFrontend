@@ -1,0 +1,245 @@
+.main
+{
+    background-color: gray;
+}
+
+
+.marquee-container {
+    display: flex;
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    justify-content: flex-start; /* Align content at the start */
+    align-items: center;
+  }
+  
+  .marquee-content {
+    display: flex;
+    width: max-content; /* Ensures content takes up the width of all items */
+    animation: marquee 20s linear infinite; /* Infinite scrolling animation */
+    animation-play-state: running; /* Start with animation running */
+    transition: animation-play-state 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  /* Pause the animation when hovered */
+  .marquee-container:hover .marquee-content {
+    animation-play-state: paused; /* Stop animation on hover */
+  }
+  
+  .marquee-item {
+    width: 500px;
+    height: 200px;
+    border-width: 1px;
+    border-color: rgb(199, 199, 255);
+    border-radius: 5px;
+    background-color: rgb(247, 247, 247);
+    display: inline-flex;
+    margin-right: 50px; /* Space between items */
+  }
+  
+  /* Keyframes for continuous scrolling */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0); /* Start with the content at the beginning */
+    }
+    100% {
+      transform: translateX(-100%); /* Move content off to the left */
+    }
+  }
+  
+  
+  
+
+.book
+{
+    transition: 0.2s;
+    animation: ease-in-out;
+}
+.book:hover
+{
+    background-color: white;
+    animation: ease-in-out;
+    transition: 0.2s;
+    width: 25%;
+}
+.book:hover button
+{
+    color: black;
+}
+
+.hcspa
+{
+    background-image: url("../assets//hc+spa.png");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.rbkr
+{
+    background-image: url("../assets//rb+kr.png");
+    background-repeat: repeat;
+    background-size: cover;
+}
+.bbhc
+{
+    background-image: url("../assets//bb+hc.png");
+    background-repeat: repeat;
+    background-size: cover;
+}
+.hc
+{
+    background-image: url("../assets//hc.png");
+    background-repeat: repeat;
+    background-size: cover;
+}
+.b
+{
+    background-image: url("../assets//b.png");
+    background-repeat: repeat;
+    background-size: cover;
+}
+.pct
+{
+    background-image: url("../assets//pc+t.png");
+    background-repeat: repeat;
+    background-size: cover;
+}
+.rs
+{
+    background-image: url("../assets//r+s.png");
+    background-repeat: repeat;
+    background-size: cover;
+}
+.rct
+{
+    background-image: url("../assets//r+c+t.png");
+    background-repeat: repeat;
+    background-size: cover;
+}
+.h
+{
+    background-image: url("../assets//h.png");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+
+.items::-webkit-scrollbar {
+    display: none;
+}
+
+.fa
+{
+    font-size: 25px;
+    color: white;
+}
+
+.fa:hover
+{
+    color: rgb(64, 64, 248);
+}
+
+
+
+.swiper-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+    width: 100%; 
+}
+
+.swiper-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+
+.slide1 
+{ 
+    background-image: url("../assets//p1.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+.slide2 
+{ 
+    background-image: url("../assets//p7.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide3 
+{ 
+    background-image: url("../assets//p2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide4
+{ 
+    background-image: url("../assets//p8.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+    transition: ease-in-out;
+    transition: 0.1s;
+}
+
+.next {
+    right: 10px;
+    transition: ease-in-out;
+    transition: 0.1s;
+}
+
+.prev:hover
+{
+    background-color: rgb(231, 174, 231);
+    color: white;
+    transition: ease-in-out;
+    transition: 0.1s;
+}
+.next:hover
+{
+    background-color: rgb(231, 174, 231);
+    color: white;
+    transition: ease-in-out;
+    transition: 0.1s;
+}

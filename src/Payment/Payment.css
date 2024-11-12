@@ -1,0 +1,17 @@
+.paymentbg1
+{
+    background-image: url("../assets/bg4.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    z-index: 0;
+}
+.paymentbg2
+{
+    background-image: url("../assets/bg1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    transform: scaleX(-1);
+    z-index: 0;
+}
