@@ -51,7 +51,7 @@ function SignIn() {
 
     // Send the username and password to the backend for validation
     try {
-      const response = await fetch('http://localhost:21108/api/v1/login', {
+      const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
