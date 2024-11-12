@@ -49,7 +49,7 @@ const AdminLogin = () => {
         setSuccess('');
     
         try {
-            const response = await axios.post('https://test-conn.vercel.app/api/v1/admin', {
+            const response = await axios.post('https://guys-and-gals-backend.vercel.app/api/v1/admin', {
                 email,
                 password,
             });
