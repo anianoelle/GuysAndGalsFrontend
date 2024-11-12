@@ -37,7 +37,7 @@ function SignUp() {
         setError(null); // Reset error
 
         try {
-            const response = await axios.post('http://localhost:21108/api/v1/signup', formData);
+            const response = await axios.post('https://guys-and-gals-backend.vercel.app/api/v1/signup', formData);
             if (response.data.success) {
                 // Handle successful signup (e.g., redirect to Home)
                 navigate('/Home');
