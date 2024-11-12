@@ -171,7 +171,7 @@ const AdminInterface = () => {
             };
     
             try {
-                const response = await fetch('http://localhost:21108/api/v1/addservice', {
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/addservice', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -217,7 +217,7 @@ const AdminInterface = () => {
 
         try {
             // Make the POST request to the backend
-            const response = await axios.post('http://localhost:21108/api/v1/addservices', serviceData);
+            const response = await axios.post('https://guys-and-gals-backend.vercel.app/api/v1/addservices', serviceData);
             
             // Handle successful response
             if (response.data.success) {
@@ -346,7 +346,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
 
     try {
         // Send the updated data in JSON format
-        const response = await fetch("http://localhost:21108/api/v1/updateservice/" + updatedServiceData.serviceid, {
+        const response = await fetch("https://guys-and-gals-backend.vercel.app/api/v1/updateservice/" + updatedServiceData.serviceid, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',  // Indicate we're sending JSON data
@@ -402,7 +402,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchCustomers = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/customers');
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/customers');
                 if (!response.ok) throw new Error('Network response was not ok');
 
                 const data = await response.json();
@@ -427,7 +427,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
             console.log('Fetching customers with appointments...'); // Debugging log
 
             try {
-                const response = await axios.get('http://localhost:21108/api/v1/customerhasappointment');
+                const response = await axios.get('https://guys-and-gals-backend.vercel.app/api/v1/customerhasappointment');
                 console.log('Response data:', response.data); // Log the response
                 setCustomersHasAppointment(response.data.data); // Update state with fetched data
             } catch (err) {
@@ -467,7 +467,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     
         try {
             // Attempt to fetch appointments related to the selected customer
-            const response = await axios.get(`http://localhost:21108/api/v1/appointmentsbyid/${customer.customerid}`);
+            const response = await axios.get(`https://guys-and-gals-backend.vercel.app/api/v1/appointmentsbyid/${customer.customerid}`);
             setHasAppointments(response.data.success ? response.data.data : []); // Set appointments if successful, clear otherwise
         } catch (error) {
             console.warn("Error fetching appointments, continuing without appointments:", error.message);
@@ -485,7 +485,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
         };
     
         try {
-            const insertResponse = await axios.post('http://localhost:21108/api/v1/insertpayment', customerData);
+            const insertResponse = await axios.post('https://guys-and-gals-backend.vercel.app/api/v1/insertpayment', customerData);
             if (insertResponse.data.success) {
                 console.log('Customer data inserted successfully');
             } else {
@@ -501,7 +501,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchAdmin = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/customers');
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/customers');
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json();
                 setAdmin(data);
@@ -516,7 +516,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchEmployee = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/employee');
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/employee');
                 if (!response.ok) throw new Error('Network response was not ok');
                 const result = await response.json();
                 console.log(result); // Log to inspect the structure
@@ -594,7 +594,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchAppointments = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/appointment');
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/appointment');
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json();
     
@@ -638,7 +638,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchServices = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/service');
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/service');
                 if (!response.ok) throw new Error('Network response was not ok');
                 const result = await response.json();
     
@@ -704,7 +704,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchPriceDataPerDate = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/totalpriceperdate');
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/totalpriceperdate');
                 if (!response.ok) throw new Error('Failed to fetch');
                 const data = await response.json();
                 // Format the date
@@ -724,7 +724,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchPriceDataPerWeek = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/totalpriceperweek');
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/totalpriceperweek');
                 if (!response.ok) throw new Error('Failed to fetch');
 
                 const data = await response.json();
@@ -749,7 +749,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchPriceDataPerYear = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/totalpriceperyear'); // Adjust the endpoint
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/totalpriceperyear'); // Adjust the endpoint
                 if (!response.ok) throw new Error('Failed to fetch');
     
                 const data = await response.json();
@@ -774,7 +774,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchMonthlyPriceData = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/totalpricepermonth');
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/totalpricepermonth');
                 if (!response.ok) throw new Error('Failed to fetch');
 
                 const data = await response.json();
@@ -815,7 +815,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     const fetchPendingServices = async (customerID) => {
         try {
             // Fetch data from the backend
-            const response = await fetch(`http://localhost:21108/api/v1/pendingbycustomer/${customerID}`);
+            const response = await fetch(`https://guys-and-gals-backend.vercel.app/api/v1/pendingbycustomer/${customerID}`);
             
             // Check if the response is OK
             if (!response.ok) {
@@ -855,7 +855,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     
     const fetchPaidServices = async (customerID) => {
         try {
-            const response = await fetch(`http://localhost:21108/api/v1/paidbycustomer/${customerID}`);
+            const response = await fetch(`https://guys-and-gals-backend.vercel.app/api/v1/paidbycustomer/${customerID}`);
             const result = await response.json();
             console.log('API response:', result); // Log the API response
 
@@ -878,7 +878,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchPending = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/pending');
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/pending');
                 const result = await response.json(); // Store the whole response
                 
                 // Ensure the data property exists and is an array
@@ -949,7 +949,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
     useEffect(() => {
         const fetchPaid = async () => {
             try {
-                const response = await fetch('http://localhost:21108/api/v1/paid');
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/paid');
                 const result = await response.json();
                 console.log('API response:', result);
     
@@ -998,7 +998,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
         }
 
         // Make the POST request to update the appointment
-        axios.post('http://localhost:21108/api/v1/updateappointment', { firstName, status, customerId: selectedCustomerID })
+        axios.post('https://guys-and-gals-backend.vercel.app/api/v1/updateappointment', { firstName, status, customerId: selectedCustomerID })
         
             .then(response => {
                 console.log(response.data);
@@ -1017,7 +1017,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
 
     const fetchEmployeesWithoutAppointments = async () => {
         try {
-            const response = await fetch('http://localhost:21108/api/v1/emlpoyeenoappointment');
+            const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/emlpoyeenoappointment');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -1037,7 +1037,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
 
     const fetchEmployeesWithAppointments = async () => {
         try {
-            const response = await fetch('http://localhost:21108/api/v1/emlpoyeewithappointment');
+            const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/emlpoyeewithappointment');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
