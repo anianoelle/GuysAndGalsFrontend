@@ -1148,7 +1148,7 @@ const Onsite = selectedCustomer
 
 
 const calculateRemainingAmount = (totalAmount, totalPaidAmount) => {
-    console.log(totalPendingAmount, "yawa")
+    console.log(totalPendingAmount)
     return totalAmount - totalPaidAmount - (totalHalfPaidAmounts || 0);
 };
 
