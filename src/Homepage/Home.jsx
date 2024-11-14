@@ -26,6 +26,16 @@ function Home() {
     const [showLogoutBox, setShowLogoutBox] = useState(false);
     const [services, setServices] = useState([]);
 
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+
+// Today's date (minimum date)
+    const minDate = new Date().toISOString().split("T")[0];
+
+// Last day of the current year (maximum date)
+    const maxDate = new Date(currentYear, 11, 31).toISOString().split("T")[0];  
+
+
     const [loading, setLoading] = useState(true);
 
   
@@ -441,7 +451,8 @@ const openForm2 = () => {
                                                 className='w-[100%] h-[100%] p-2 pl-5 pr-5 focus:outline-violet-400 rounded cursor-pointer' 
                                                 aria-label="Date" 
                                                 type="date" 
-                                                min={new Date().toISOString().split("T")[0]} // Sets min to today’s date
+                                                min={minDate} // Sets min to today’s date
+                                                max={maxDate} // Sets max to the last day of the current year
                                                 required
                                             />
                                         </div>
