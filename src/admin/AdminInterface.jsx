@@ -1112,21 +1112,12 @@ const totalPaidAmounts = selectedCustomer
 //         .reduce((total, appointment) => total + (Number(appointment.price) || 0), 0)
 //     : 0; // Set to 0 if no customer is selected
 
-// const totalPendingAmounts = selectedCustomer 
-//     ? filteredAppointments
-//         .filter(appointment => 
-//             appointment.status === "Pending" &&
-//             appointment.customerid === selectedCustomer.customerid &&
-//             new Date(appointment.date) >= new Date().setHours(0, 0, 0, 0) // Only include future or current appointments
-//         )
-//         .reduce((total, appointment) => total + (Number(appointment.price) || 0), 0)
-//     : 0; 
 const totalPendingAmounts = selectedCustomer 
     ? filteredAppointments
         .filter(appointment => 
             appointment.status === "Pending" &&
             appointment.customerid === selectedCustomer.customerid &&
-            new Date(appointment.date).getTime() >= new Date().setHours(0, 0, 0, 0) // Only include future or current appointments
+            new Date(appointment.date) >= new Date().setHours(0, 0, 0, 0) // Only include future or current appointments
         )
         .reduce((total, appointment) => total + (Number(appointment.price) || 0), 0)
     : 0; 
