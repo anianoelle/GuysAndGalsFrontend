@@ -1189,7 +1189,7 @@ const handleAddAmount = async () => {
     }
 
     try {
-        const response = await axios.post('http://localhost:21108/api/v1/addpayment', {
+        const response = await axios.post('https://guys-and-gals-backend.vercel.app/api/v1/addpayment', {
             amountToAdd, // The amount to be added to the existing AmountPaid
             selectedCustomer, // Send the selected customer data with customerid
         });
