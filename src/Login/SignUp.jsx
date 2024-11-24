@@ -39,8 +39,8 @@ function SignUp() {
         try {
             const response = await axios.post('https://guys-and-gals-backend.vercel.app/api/v1/signup', formData);
             if (response.data.success) {
-                // Handle successful signup (e.g., redirect to Home)
-                navigate('/Home');
+                
+                navigate('/');
             }
         } catch (err) {
             // Check if the error response exists
