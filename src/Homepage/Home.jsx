@@ -813,7 +813,7 @@ const openForm2 = () => {
                         <div className="marquee-item relative z-50">
                                 <div className='w-[23%] h-[100%] relative flex justify-center pt-4'>
                                     <div className='w-[71%] h-[45%] rounded-full border-2 border-blue-400 mt-3'>
-                                        <img className='w-[100%] h-[100%] rounded-full' src='https://scontent.fdvo2-2.fna.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=dst-png_s200x200&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_eui2=AeEZ0kDwkUHM4l_3lpz-YjVLWt9TLzuBU1Ba31MvO4FTULTP3cIcI4EmJjy9lTdh7ZTIRNClKCc8Px04EkkW9od1&_nc_ohc=WMJtxxUeM4wQ7kNvgFpF9PR&_nc_zt=24&_nc_ht=scontent.fdvo2-2.fna&_nc_gid=ADRXSV_ipIGa0nJoGxP7gCH&oh=00_AYDmcHAQrzPXAo2e0KxFGnHlnNAjlB2Yx7GoCvapCnRCAw&oe=6759533A'></img>
+                                        <img className='w-[100%] h-[100%] rounded-full' src='https://ibb.co/fN9HWV9'></img>
                                     </div>
                                 </div>
                                 <div className='w-[77%] h-[100%] flex items-center justify-center flex-col'>
