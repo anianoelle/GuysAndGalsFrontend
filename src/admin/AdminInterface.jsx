@@ -2162,13 +2162,6 @@ const handleAddAmount = async () => {
 
                                                                 {/* Calculate and display the total price for "Half Paid" appointments */}
                                                                 {status === "Half Paid" && (
-                                                                    <div className="mt-4 p-3 border bg-gray-100 border-blue-300 rounded-sm">
-                                                                        <h2 className="text-md text-blue-400">
-                                                                            Total: P{totalHalfPaidAmounts}
-                                                                        </h2>
-                                                                    </div>
-                                                                )}  
-                                                                {status === "Half Paid" && (
                                                                     <div className="mt-1 p-3 border bg-gray-100 border-blue-300 rounded-sm">
                                                                         <h2 className="text-md text-blue-400">
                                                                             Remaining: P{totalHalfPaidRemainingAmounts}
