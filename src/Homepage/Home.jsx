@@ -797,7 +797,7 @@ const openForm2 = () => {
                             <div className="marquee-item relative z-50">
                                 <div className='w-[23%] h-[100%] relative flex justify-center pt-4'>
                                     <div className='w-[71%] h-[45%] rounded-full border-2 border-blue-400 mt-3'>
-                                        <img className='w-[100%] h-[100%] rounded-full' src='https://ibb.co/phVX3PF'></img>
+                                        <img className='w-[100%] h-[100%] rounded-full' src={pic1}></img>
                                     </div>
                                 </div>
                                 <div className='w-[77%] h-[100%] flex items-center justify-center flex-col'>
