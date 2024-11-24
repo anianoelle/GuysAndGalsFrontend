@@ -7,6 +7,11 @@ import p4 from "../assets/p4.jpg"
 import axios from 'axios'; // Import axios
 import video from "../assets/video.mp4"
 import pic1 from "../assets/1.jpg"
+import pic2 from "../assets/2.jpg"
+import pic3 from "../assets/3.png"
+import pic4 from "../assets/4.jpg"
+import pic5 from "../assets/5.jpg"
+import pic6 from "../assets/6.jpg"
 
 
 function Home() {    
@@ -767,7 +772,7 @@ const openForm2 = () => {
                             <div className="marquee-item relative z-50">
                                 <div className='w-[23%] h-[100%] relative flex justify-center pt-4'>
                                     <div className='w-[71%] h-[45%] rounded-full border-2 border-blue-400 mt-3'>
-                                        <img className='w-[100%] h-[100%] rounded-full' src='https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-1/434033708_2303243103204529_7726839922375254016_n.jpg?stp=dst-jpg_s200x200&_nc_cat=100&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeH6AYQ9Yh7fIPVfLwkgzhWb8WcCTUDRP9bxZwJNQNE_1mUGtW_gi9rXned2yEEWM08TkRsoiy85r4OTApGte_KZ&_nc_ohc=2x1utJum5rsQ7kNvgH1Su1q&_nc_zt=24&_nc_ht=scontent.fmnl13-1.fna&_nc_gid=A5DWCbvlxFIP0sTr00KuP3_&oh=00_AYA_3DAvD_olpVELYymm0CGxOJ6l9ayfGFtdYDGEsO72rA&oe=6737A3A0'></img>
+                                        <img className='w-[100%] h-[100%] rounded-full' src={pic6}></img>
                                     </div>
                                 </div>
                                 <div className='w-[77%] h-[100%] flex items-center justify-center flex-col'>
@@ -782,7 +787,7 @@ const openForm2 = () => {
                             <div className="marquee-item relative z-50">
                                 <div className='w-[23%] h-[100%] relative flex justify-center pt-4'>
                                     <div className='w-[71%] h-[45%] rounded-full border-2 border-blue-400 mt-3'>
-                                        <img className='w-[100%] h-[100%] rounded-full' src='https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-1/434649495_2324702757719231_5510553949043464221_n.jpg?stp=dst-jpg_s160x160&_nc_cat=100&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeGA_ASg6joCbU4OBlYMvUowTE1QlWKTZx5MTVCVYpNnHiDa50jHHLP32eQX9POelG91gAXsKsFhvk_MuOzzgQNH&_nc_ohc=Zdx18xkKlkkQ7kNvgG9yqh5&_nc_zt=24&_nc_ht=scontent.fmnl13-1.fna&_nc_gid=AeAS62RcjVJAIPZQUdzUp8g&oh=00_AYCsYYL4HEb5oK3O3GuZIT6tjzVPKixYeoN8eRrfbdlsew&oe=6737C16B'></img>
+                                        <img className='w-[100%] h-[100%] rounded-full' src={pic5}></img>
                                     </div>
                                 </div>
                                 <div className='w-[77%] h-[100%] flex items-center justify-center flex-col'>
@@ -814,7 +819,7 @@ const openForm2 = () => {
                         <div className="marquee-item relative z-50">
                                 <div className='w-[23%] h-[100%] relative flex justify-center pt-4'>
                                     <div className='w-[71%] h-[45%] rounded-full border-2 border-blue-400 mt-3'>
-                                        <img className='w-[100%] h-[100%] rounded-full' src='https://ibb.co/fN9HWV9'></img>
+                                        <img className='w-[100%] h-[100%] rounded-full' src={pic3}></img>
                                     </div>
                                 </div>
                                 <div className='w-[77%] h-[100%] flex items-center justify-center flex-col'>
@@ -829,7 +834,7 @@ const openForm2 = () => {
                             <div className="marquee-item relative z-50">
                                 <div className='w-[23%] h-[100%] relative flex justify-center pt-4'>
                                     <div className='w-[71%] h-[45%] rounded-full border-2 border-blue-400 mt-3'>
-                                        <img className='w-[100%] h-[100%] rounded-full' src='https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-1/464193224_8666897860020662_4981528004829076617_n.jpg?stp=dst-jpg_s200x200&_nc_cat=105&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeFmmm1avpsa6nnOQQy2qJEAntK911Wl6xme0r3XVaXrGVCoWwl1Y7mLmbRiHJLxxq4l97OXHAN-dcvwOS3ue-HQ&_nc_ohc=lHQ-X1wI870Q7kNvgFZLBM6&_nc_zt=24&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=ArVEosU7sL-Lp09eHyzf3JH&oh=00_AYAmaWFqCKkLbdL-7RsMspTWhz3ePaadVLrem1EJmsAgVA&oe=6737A134'></img>
+                                        <img className='w-[100%] h-[100%] rounded-full' src={pic4}></img>
                                     </div>
                                 </div>
                                 <div className='w-[77%] h-[100%] flex items-center justify-center flex-col'>
@@ -844,7 +849,7 @@ const openForm2 = () => {
                             <div className="marquee-item relative z-50">
                                 <div className='w-[23%] h-[100%] relative flex justify-center pt-4'>
                                     <div className='w-[71%] h-[45%] rounded-full border-2 border-blue-400 mt-3'>
-                                        <img className='w-[100%] h-[100%] rounded-full' src='https://ibb.co/HVfGWFh'></img>
+                                        <img className='w-[100%] h-[100%] rounded-full' src={pic2}></img>
                                     </div>
                                 </div>
                                 <div className='w-[77%] h-[100%] flex items-center justify-center flex-col'>
