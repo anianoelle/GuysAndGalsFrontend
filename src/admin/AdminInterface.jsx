@@ -998,7 +998,7 @@ const handleServiceUpdate = async (updatedServiceData) => {
         }
 
         // Make the POST request to update the appointment
-        axios.post('https://guys-and-gals-backend.vercel.app/api/v1/updateappointment', { firstName, status, customerId: selectedCustomerID })
+        axios.post('https://guys-and-gals-backend.vercel.app/api/v1/updateappointment', { firstName, status, customerId: selectedCustomerID, amount: totalPendingAmount })
         
             .then(response => {
                 console.log(response.data);
@@ -1148,17 +1148,10 @@ const Onsite = selectedCustomer
 
 
 
-const calculateRemainingAmount = (totalAmount, totalPaidAmount) => {
-    console.log(totalPendingAmount)
-    return totalAmount - totalPaidAmount - (totalHalfPaidAmounts || 0);
-};
-
-const remainingAmount = calculateRemainingAmount(displayTotalAmount(), totalPaidAmounts);
-const Due = totalHalfPaidAmounts + totalPendingAmounts + Onsite + totalPaidAmounts;
-const Paid = totalHalfPaidAmounts / 2 + totalPaidAmounts;
-const Outstanding = Math.max(Due - Paid, 0);
-
-
+let remainingBalance = 0;
+if (selectedCustomer) {
+  remainingBalance = selectedCustomer.totalamount - selectedCustomer.amountpaid ;
+}
 
 const handleAddAmount = async () => {
     if (!selectedCustomer) {
@@ -1171,25 +1164,30 @@ const handleAddAmount = async () => {
         return;
     }
 
-    if (Outstanding === 0) {
+    // Check if the outstanding balance is zero
+    if (remainingBalance === 0) {
         alert('The outstanding balance is already fully paid. No additional payment is needed.');
         return;
     }
 
-    // Calculate newOutstanding to check if it will meet the requirement to reach zero
-    const newOutstanding = Outstanding - amountToAdd;
+    // Calculate the new remaining balance after the payment
+    const newRemainingAmount = remainingBalance - amountToAdd;
 
-    // Check if the newOutstanding will be zero (or very close to zero, e.g., within 0.01)
-    if (newOutstanding < 0) {
+    // If the new remaining amount is negative, it means the amount is too much
+    if (newRemainingAmount < 0) {
         alert('The amount entered is too much');
-        return;
-    } else if (newOutstanding > 0) {
-        alert('The amount entered is not enough to fully pay off the outstanding balance.');  
         return;
     }
 
+    // If the new remaining amount is still positive, the payment is not enough
+    if (newRemainingAmount > 0) {
+        alert('The amount entered is not enough to fully pay off the remaining balance.');
+        return;
+    }
+
+    // Proceed with adding the payment
     try {
-        const response = await axios.post('https://guys-and-gals-backend.vercel.app/api/v1/addpayment', {
+        const response = await axios.post('http://localhost:21108/api/v1/addpayment', {
             amountToAdd, // The amount to be added to the existing AmountPaid
             selectedCustomer, // Send the selected customer data with customerid
         });
@@ -1210,18 +1208,6 @@ const handleAddAmount = async () => {
 };
 
 
-const newOutstanding = (isNaN(amountToAdd) || amountToAdd === 0) ? Outstanding : Outstanding - amountToAdd;
-
-
-
-
-
-console.log("Paid:", Paid);
-console.log("Total Amount:", displayTotalAmount());
-console.log("Total Paid Amounts:", totalPaidAmounts);
-console.log("Total Half Paid Amounts:", totalHalfPaidAmounts);
-console.log("Remaining Amount:", remainingAmount);
-console.log("Selected Customer:", selectedCustomer);
 
 
 
@@ -2083,8 +2069,8 @@ console.log("Selected Customer:", selectedCustomer);
                                     <div className='w-[16.66%] h-[100%] flex items-center justify-center'><h1 className='font-semibold text-gray-500'>{selectedCustomer.fname}</h1></div>
                                     <div className='w-[16.66%] h-[100%] flex items-center justify-center'><h1 className='font-semibold text-gray-500'>{selectedCustomer.lname}</h1></div>
                                     <div className='w-[16.66%] h-[100%] flex items-center justify-center'><h1 className='font-semibold text-gray-500'>0{selectedCustomer.phone}</h1></div>
-                                    <div className='w-[16.66%] h-[100%] flex items-center justify-center'><h1 className='font-semibold text-gray-500'>{Due}</h1></div>
-                                    <div className='w-[16.66%] h-[100%] flex items-center justify-center'><h1 className='font-semibold text-gray-500'>{newOutstanding}</h1></div>
+                                    <div className='w-[16.66%] h-[100%] flex items-center justify-center'><h1 className='font-semibold text-gray-500'>{selectedCustomer.totalamount}</h1></div>
+                                    <div className='w-[16.66%] h-[100%] flex items-center justify-center'><h1 className='font-semibold text-gray-500'>{remainingBalance}</h1></div>
                                 </div>
                             )}  
                             </div>
