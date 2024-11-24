@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import p4 from "../assets/p4.jpg"
 import axios from 'axios'; // Import axios
 import video from "../assets/video.mp4"
-import 1 from "../assets/1.jpg"
+import pic1 from "../assets/1.jpg"
 
 
 function Home() {    
