@@ -39,7 +39,7 @@ function SignUp() {
         try {
             const response = await axios.post('https://guys-and-gals-backend.vercel.app/api/v1/signup', formData);
             if (response.data.success) {
-                
+                window.alert('Signup successful!');
                 navigate('/');
             }
         } catch (err) {
