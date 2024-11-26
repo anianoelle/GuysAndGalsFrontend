@@ -156,9 +156,18 @@ const AdminInterface = () => {
         setToggleState(index);
     }
 
-    const handleDataInsertion = async () => {
+      const handleDataInsertion = async () => {
         if (selectedCustomer) {
-            const currentDate = new Date(); 
+            const currentDate = new Date();
+            
+            // Get local date parts
+            const year = currentDate.getFullYear();
+            const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based, so add 1
+            const day = String(currentDate.getDate()).padStart(2, '0');
+    
+            const formattedDate = `${year}-${month}-${day}`; // Format to 'YYYY-MM-DD'
+            const formattedTime = currentDate.toTimeString().split(' ')[0]; // 'HH:MM:SS'
+    
             const dataToInsert = {
                 customerId: selectedCustomer.customerid,
                 employeename: selectedCustomer.empfname,
@@ -166,12 +175,12 @@ const AdminInterface = () => {
                 serviceId: selectedService.serviceid,
                 status: "Onsite",
                 servicename: selectedService.servicename,
-                date: currentDate.toISOString().split('T')[0],
-                time: currentDate.toTimeString().split(' ')[0] 
+                date: formattedDate, // Use the locally formatted date
+                time: formattedTime
             };
     
             try {
-                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/addservice', {
+                const response = await fetch('http://localhost:21108/api/v1/addservice', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -188,7 +197,7 @@ const AdminInterface = () => {
                 window.location.reload();
                 console.log('Data inserted successfully:', result);
                 // Optionally, update the state or UI based on the result
-
+    
                 // fetchData(); 
             } catch (error) {
                 console.error('Error inserting data:', error);
