@@ -35,11 +35,10 @@ function Home() {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
 
-// Today's date (minimum date)
-    const minDate = new Date().toISOString().split("T")[0];
+const minDate = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`;
 
-// Last day of the current year (maximum date)
-    const maxDate = new Date(currentYear, 11, 31).toISOString().split("T")[0];  
+// Get the maximum date (last day of the current year)
+const maxDate = `${currentYear}-12-31`; // December 31st of the current year
 
 
     const [loading, setLoading] = useState(true);
