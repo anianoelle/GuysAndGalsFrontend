@@ -180,7 +180,7 @@ const AdminInterface = () => {
             };
     
             try {
-                const response = await fetch('http://localhost:21108/api/v1/addservice', {
+                const response = await fetch('https://guys-and-gals-backend.vercel.app/api/v1/addservice', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
