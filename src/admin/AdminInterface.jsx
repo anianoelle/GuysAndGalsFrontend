@@ -1007,7 +1007,8 @@ const handleServiceUpdate = async (updatedServiceData) => {
             })
             .catch(error => {
                 console.error('Error updating appointment:', error.response || error);
-                alert('Failed to update appointment. Please try again.');
+                const errorMessage = error.response?.data?.message || 'Failed to update appointment. Please try again.';
+                alert(errorMessage);
             });
     };
 
